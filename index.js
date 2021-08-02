@@ -12,7 +12,7 @@ const generateHTML = require('./src/page-template.js');
 const { writeFile, copyFile } = require('./src/generateHTML.js');
 
 // prompt for info for single team manager
-const managerPrompt = () => {
+const promptManager = () => {
     return inquirer
         .prompt(
             [
@@ -45,13 +45,13 @@ const managerPrompt = () => {
         }
         )
         // then go to the prompt for other employees
-        .then(otherEmployeePrompt)
+        .then(promptOtherEmployee)
         .catch(err => {
             console.log(err);
         });
 };
 
-const otherEmployeePrompt = () => {
+const promptOtherEmployee = () => {
     return inquirer
         .prompt(
             {
@@ -63,10 +63,10 @@ const otherEmployeePrompt = () => {
         )
         .then(answers => {
             if (answers.choices === 'Engineer') {
-                engineerPrompt();
+                promptEngineer();
             }
             else if (answers.choices === 'Intern') {
-                internPrompt();
+                promptIntern();
             }
             else {
                 generateHTML()
@@ -87,7 +87,7 @@ const otherEmployeePrompt = () => {
         })
 };
 
-const engineerPrompt = answers => {
+const promptEngineer = answers => {
     if (!answers.list) {
         answers.list = [];
     }
@@ -124,12 +124,12 @@ const engineerPrompt = answers => {
         .then(answer => {
             if (anotherEngineer.default = true) {
                 engineerData.list.push(answer);
-                console.log(otherEmployeeData.list);
-                otherEmployeePrompt();
+                console.log(engineerData.list);
+                promptOtherEmployee();
             }
             else {
                 engineerData.list.push(answer);
-                engineerPrompt();
+                promptEngineer();
             }
         })
         .catch(err => {
@@ -137,7 +137,7 @@ const engineerPrompt = answers => {
         });
 };
 
-const internPrompt = internData => {
+const promptIntern = internData => {
     if (!internData.list) {
         internData.list = [];
     }
@@ -174,11 +174,11 @@ const internPrompt = internData => {
         .then((answer) => {
             if (anotherIntern.default = true) {
                 internData.list.push(answer);
-                otherEmployeePrompt();
+                promptOtherEmployee();
             }
             else {
                 internData.list.push(answer);
-                internPrompt();
+                promptManager();
             }
         })
         .catch(err => {
@@ -186,4 +186,4 @@ const internPrompt = internData => {
         });
 };
 
-managerPrompt();
+promptManager();

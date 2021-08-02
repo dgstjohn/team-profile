@@ -1,5 +1,5 @@
 const generateManager = () => {
-    const { employeeName, id, email, officeNumber} = answers;
+    const { employeeName, id, email, officeNumber} = data;
     return `<div class="card">
             <div class="card-header">
                 <h4 id="employeeName">${employeeName}</h5>
@@ -59,7 +59,7 @@ const generateIntern = () => {
 
 module.exports = templateData => {
     console.log(templateData);
-    // const { managerObjData, engineerPrompt, internPrompt, ...header } = generateHTML;
+    // const { manager, engineer, intern, ...header } = generateHTML;
     return `<!DOCTYPE html>
     <html lang="en">
     
