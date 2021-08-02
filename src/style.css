@@ -9,10 +9,6 @@ header {
     margin-bottom: 30px;
 }
 
-.container {
-    border: 3px solid grey;
-}
-
 .card {
     width: 18rem;
     margin-bottom: 20px;
@@ -39,4 +35,8 @@ header {
 
 .card-body span {
     color: darkslateblue;
+}
+
+.row {
+    justify-content: center;
 }
