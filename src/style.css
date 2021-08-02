@@ -1,0 +1,42 @@
+header {
+    background-color: darkslateblue;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 18rem;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: darkslateblue;
+    color: whitesmoke
+}
+
+.card-header h4 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-header p {
+    font-size: 16px;
+}
+
+.card-body {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.card-body span {
+    color: darkslateblue;
+}
+
+.row {
+    justify-content: center;
+}
